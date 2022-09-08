@@ -9,6 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           release-type: rust
           package-name: tera-cli
+      - uses: actions/checkout@v2
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Build
+        run: cargo build --release
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Upload binary
+        run: gh release upload ${{ steps.release.outputs.tag_name }} target/release/tera-cli
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
