@@ -10,6 +10,10 @@ on:
       - ready_for_review
       - reopened
       - unlocked
+  workflow_run:
+    workflows: [release-please]
+    types:
+      - completed
 
 jobs:
   automerge:
@@ -19,7 +23,6 @@ jobs:
         name: automerge
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
-          MERGE_LABELS: "autorelease: pending"
           MERGE_METHOD: rebase
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           UPDATE_METHOD: rebase

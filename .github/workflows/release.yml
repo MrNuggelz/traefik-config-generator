@@ -11,6 +11,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
+          labels: automerge
           release-type: rust
           package-name: tera-cli
       - uses: actions/checkout@v2
