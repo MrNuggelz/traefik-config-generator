@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/MrNuggelz/tera-cli/compare/v0.2.0...v0.3.0) (2022-09-08)
+
+
+### Features
+
+* Add dependabot ([1e303c3](https://github.com/MrNuggelz/tera-cli/commit/1e303c37707593f9d45dfb6e44b5e85f96d56f3e))
+* Set release-please label to automerge ([ece47e3](https://github.com/MrNuggelz/tera-cli/commit/ece47e3e910c6d9dd2c270bfcb6a11d7a812fa2d))
+
 ## [0.2.0](https://github.com/MrNuggelz/tera-cli/compare/v0.1.0...v0.2.0) (2022-09-08)
 
 
